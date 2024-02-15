@@ -21,10 +21,13 @@ async function read(whatsappId){
 }
 
 
-async function create(data){
-    return await whatsappModel.create(data)    
+async function updateCampaign(data){
+    return await mongoose.models.campaign.create(data)    
 }
 
+async function del(whatsappId){
+    return await whatsappModel.deleteOne({whatsappId})
+ }
 
 
-module.exports = {create,update,updateCampaign,read,del}
+module.exports = {create,updateCampaign,read,del}
